@@ -1,4 +1,4 @@
-package tests;
+package stepDefs;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,7 +20,6 @@ public class Login {
 	@When("I enter the username {string}")
 	public void i_enter_the_username(String string) {
 		System.out.println("one");
-
 	}
 
 	@When("I enter the password {string}")
