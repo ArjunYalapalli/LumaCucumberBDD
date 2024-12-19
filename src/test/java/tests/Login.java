@@ -37,7 +37,7 @@ public class Login {
 
 	@Then("I should see the {string} message")
 	public void i_should_see_the_message(String string) {
-		System.out.println("one----"+string);
+		System.out.println("one----" + string);
 
 	}
 
