@@ -3,7 +3,7 @@ package stepDefs;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Create_Act {
+public class AccountCreation {
 
 	@When("I enter the first name {string}")
 	public void i_enter_the_first_name(String string) {
