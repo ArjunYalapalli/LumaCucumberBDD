@@ -13,7 +13,6 @@ public class Hooks {
 
 	@Before
 	public void setup() {
-
 		DriverFactory.BrowserInitilization("chrome");
 		driver = DriverFactory.getDriver();
 		driver.manage().window().maximize();
