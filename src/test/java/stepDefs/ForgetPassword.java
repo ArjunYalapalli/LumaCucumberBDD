@@ -1,26 +1,40 @@
 package stepDefs;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import driverInitilization.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class ForgetPassword {
 
+	WebDriver driver;
+
 	@Given("I am on the Sign In page")
 	public void i_am_on_the_sign_in_page() {
-		System.out.println("one");
+		driver = DriverFactory.getDriver();
+
+		driver.findElement(By.xpath("//div[@class='panel header']//a[contains(text(),'Sign In')]")).click();
 
 	}
 
 	@When("I click on the {string} link")
 	public void i_click_on_the_link(String string) {
-		System.out.println("one");
+		driver.findElement(By.linkText(string)).click();
 
 	}
 
 	@Then("I should be redirected to the Forgot Your Password page")
 	public void i_should_be_redirected_to_the_forgot_your_password_page() {
-		System.out.println("one");
+		String actTitle = driver.getTitle();
+		if (actTitle.equals("Forgot Your Password?")) {
+			System.out.println("User is on forget password page ");
+		}
 
 	}
 

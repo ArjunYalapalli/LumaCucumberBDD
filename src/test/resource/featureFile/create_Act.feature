@@ -1,5 +1,6 @@
 Feature: account creation
 
+@all @regression @accountCreation
   Scenario Outline: account creation of new member
     Given I visit the Magento website
     And I click on the "Create an Account" linktext
