@@ -7,7 +7,6 @@ public class LoginPage extends BasePage {
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	By email = By.xpath("//input[@id='email']");

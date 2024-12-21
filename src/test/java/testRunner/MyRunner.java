@@ -8,11 +8,11 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-		features = "src/test/resource/featureFile", glue = { "stepDefs", "my_hooks" }, tags = "@forgetPassword",
+		features = "src/test/resource/featureFile", glue = { "stepDefs", "my_hooks" }, tags = "@all",
 		
 		publish=true,
 
-		plugin = { "pretty", "html:target/HTML_Reports/cucumber_htmlReports.html", "json:target/arjun.json" }
+		plugin = { "pretty", "html:target/HTML_Reports/cucumber_htmlReports.html", "json:target/JSON_Reports/cucumber_jsonReports.json" }
 
 )
 
