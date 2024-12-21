@@ -1,8 +1,5 @@
 package my_hooks;
 
-import java.time.Duration;
-import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 
 import driverInitilization.DriverFactory;
@@ -15,12 +12,10 @@ public class Hooks {
 
 	@Before
 	public void setup() {
-		Properties prop = ConfigReader.getProperties();
-		DriverFactory.BrowserInitilization(prop.getProperty("browser"));
+
+		DriverFactory.BrowserInitilization(ConfigReader.getProperties().getProperty("browser"));
 		driver = DriverFactory.getDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://magento.softwaretestingboard.com/");
+
 	}
 
 	@After

@@ -1,9 +1,13 @@
 package driverInitilization;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import utilities.ConfigReader;
 
 public class DriverFactory {
 
@@ -20,6 +24,9 @@ public class DriverFactory {
 		} else {
 			System.out.println("Browser not configured");
 		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get(ConfigReader.getProperties().getProperty("testEnv_URL"));
 	}
 
 	public static WebDriver getDriver() {

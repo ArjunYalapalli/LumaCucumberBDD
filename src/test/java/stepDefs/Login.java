@@ -7,41 +7,43 @@ import driverInitilization.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
 
 public class Login {
 
-	WebDriver driver;
+	WebDriver driver = DriverFactory.getDriver();
+	HomePage hm = new HomePage(driver);
+	LoginPage lp = new LoginPage(driver);
 
 	@Given("I visit the Magento website")
 	public void i_visit_the_magento_website() {
-		driver = DriverFactory.getDriver();
 
 		System.out.println(driver.getTitle());
 	}
 
 	@When("I click on the {string} linktext")
 	public void i_click_on_the_linktext(String string) {
-
-		driver.findElement(By.xpath("//div[@class='panel header']//a[contains(text(),'Sign In')]")).click();
+		hm.click_On_SignIN();
 	}
 
 	@When("I enter the username {string}")
 	public void i_enter_the_username(String string) {
 
-		driver.findElement(By.xpath("//input[@id='email']")).sendKeys(string);
+		lp.enter_Email(string);
 	}
 
 	@When("I enter the password {string}")
 	public void i_enter_the_password(String string) {
 
-		driver.findElement(By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']")).sendKeys(string);
+		lp.enter_Password(string);
 
 	}
 
 	@When("I click on the {string} button")
 	public void i_click_on_the_button(String string) {
 
-		driver.findElement(By.xpath("//fieldset[@class='fieldset login']//span[contains(text(),'Sign In')]")).click();
+		lp.click_SignIn_btn();
 
 	}
 

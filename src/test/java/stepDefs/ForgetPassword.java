@@ -10,11 +10,10 @@ import io.cucumber.java.en.When;
 
 public class ForgetPassword {
 
-	WebDriver driver;
+	WebDriver driver = DriverFactory.getDriver();
 
 	@Given("I am on the Sign In page")
 	public void i_am_on_the_sign_in_page() {
-		driver = DriverFactory.getDriver();
 
 		driver.findElement(By.xpath("//div[@class='panel header']//a[contains(text(),'Sign In')]")).click();
 
