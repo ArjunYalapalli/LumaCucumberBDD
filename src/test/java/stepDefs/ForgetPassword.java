@@ -19,9 +19,8 @@ public class ForgetPassword {
 
 	}
 
-	@When("I click on the {string} link")
-	public void i_click_on_the_link(String string) {
-		driver.findElement(By.linkText(string)).click();
+	@When("I click on the Forgot Your Password? link")
+	public void i_click_on_the_forgot_your_password_link() {
 
 	}
 
@@ -56,6 +55,12 @@ public class ForgetPassword {
 	public void i_leave_the_email_field_blank() {
 		System.out.println("one");
 
+	}
+
+	@When("I click on the Reset Password button")
+	public void i_click_on_the_reset_password_button() {
+		// Write code here that turns the phrase above into concrete actions
+		throw new io.cucumber.java.PendingException();
 	}
 
 	@Then("I should see an error message {string}")

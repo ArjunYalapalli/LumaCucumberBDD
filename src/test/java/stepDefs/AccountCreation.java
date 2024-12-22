@@ -1,9 +1,14 @@
 package stepDefs;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class AccountCreation {
+	@Given("I click on the Create an Account linktext")
+	public void i_click_on_the_create_an_account_linktext() {
+		
+	}
 
 	@When("I enter the first name {string}")
 	public void i_enter_the_first_name(String string) {
@@ -33,9 +38,8 @@ public class AccountCreation {
 
 	}
 
-	@Then("I click on {string} button")
-	public void i_click_on_button(String string) {
-		System.out.println(string);
-
+	@Then("I click on Create an account button")
+	public void i_click_on_create_an_account_button() {
+		
 	}
 }
