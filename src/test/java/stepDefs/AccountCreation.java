@@ -50,14 +50,13 @@ public class AccountCreation {
 	@When("I enter the Password {string}")
 	public void I_enter_the_Password(String string) {
 
-		cap.enterLastName(string);
-
+		cap.enterPassword(string);
 	}
 
 	@When("I enter the confirm password {string}")
 	public void i_enter_the_confirm_password(String string) {
 
-		cap.enterLastName(string);
+		cap.enterConfirmPassword(string);
 
 	}
 

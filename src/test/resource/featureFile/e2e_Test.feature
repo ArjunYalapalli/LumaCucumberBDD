@@ -3,21 +3,21 @@ Feature: User Checkout Flow on Magento website
   I want to test luma app by creating acount, login, searching a product, select a product, add to cart, procced to checkout,
   shipping address, shipping methods, review and payments, place order, success page
 
-  @smoke
+  @all @smoke @regression
   Scenario: Complete checkout process on the Magento website
     Given I visit the Magento website
-    When I click on the "Create an Account" link
+    When I click on the Create an Account linktext
     And I fill in the registration details with the following:
       | First Name       | John                 |
       | Last Name        | Doe                  |
       | Email            | john.doe@example.com |
       | Password         | P@ssw0rd             |
       | Confirm Password | P@ssw0rd             |
-    And I click on "Create an account" button
+    And I click on Create an account button
     Then I should see the "Thank you for registering with Main Website Store." message
     And I click on logout from the application
     Then I should see the "You are signed out" message
-    When I click on the "Sign In" link
+    When I click on the Sign In linktext
     And I enter valid credentials with the following:
       | Email    | john.doe@example.com |
       | Password | P@ssw0rd             |
