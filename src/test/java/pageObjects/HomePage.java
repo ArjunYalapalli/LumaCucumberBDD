@@ -12,6 +12,7 @@ public class HomePage extends BasePage {
 	By signIn = By.xpath("//div[@class='panel header']//a[contains(text(),'Sign In')]");
 
 	public void click_On_SignIN() {
+		
 		driver.findElement(signIn).isDisplayed();
 		driver.findElement(signIn).click();
 	}

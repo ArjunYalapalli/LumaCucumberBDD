@@ -13,27 +13,31 @@ import driverInitilization.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import utilities.CommonUtils;
 import utilities.ConfigReader;
 
 public class Hooks {
+
 	WebDriver driver;
+	CommonUtils cu=new CommonUtils();
 
 	@Before
 	public void setup() {
 
-		DriverFactory.BrowserInitilization(ConfigReader.getProperties().getProperty("browser"));
+		DriverFactory.BrowserInitilization(ConfigReader.getBrowser());
 		driver = DriverFactory.getDriver();
 
 	}
 
 	@After
 	public void tearDown(Scenario scenario) {
+
 		if (scenario.isFailed()) {
 			// Take a screenshot if the scenario failed
 			File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
 				// Define the destination file path
-				Path destinationPath = Path.of("target/screenshots/" + scenario.getName() + ".png");
+				Path destinationPath = Path.of("target/screenshots/" + scenario.getName() +cu.alphaNumaric()+ ".png");
 				// Create the parent directories if they don't exist
 				Files.createDirectories(destinationPath.getParent());
 				// Copy the screenshot to the destination
@@ -42,8 +46,8 @@ public class Hooks {
 				e.printStackTrace();
 			}
 		}
+
 		driver.quit();
 
 	}
-
 }

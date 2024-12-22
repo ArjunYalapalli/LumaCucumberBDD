@@ -2,7 +2,9 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +14,8 @@ public class BasePage {
 
 	WebDriver driver;
 	WebDriverWait wait;
+
+	JavascriptExecutor js = (JavascriptExecutor) driver;
 
 	// Constructor to initialize WebDriver
 	public BasePage(WebDriver driver) {
@@ -69,4 +73,63 @@ public class BasePage {
 
 	}
 
+	// Accept an alert
+	public void acceptAlert() {
+
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+
+	}
+
+	// Dismiss an alert
+	public void dismissAlert() {
+
+		Alert alert = driver.switchTo().alert();
+		alert.dismiss();
+
+	}
+
+	// Get alert message text
+	public String getAlertText() {
+
+		Alert alert = driver.switchTo().alert();
+		return alert.getText();
+
+	}
+
+	// Send text to an alert (for prompt alerts)
+	public void sendTextToAlert(String text) {
+
+		Alert alert = driver.switchTo().alert();
+		alert.sendKeys(text);
+
+	}
+
+	// Scroll to an element using JavaScript
+	public void scrollToElement(WebElement element) {
+
+		js.executeScript("arguments[0].scrollIntoView();", element);
+
+	}
+
+	// Click an element using JavaScript
+	public void clickUsingJavaScript(WebElement element) {
+
+		js.executeScript("arguments[0].click();", element);
+
+	}
+
+	// Scroll to the bottom of the page
+	public void scrollToBottom() {
+
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+
+	}
+
+	// Scroll to the Top of the page
+	public void scrollToTop() {
+
+		js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
+
+	}
 }

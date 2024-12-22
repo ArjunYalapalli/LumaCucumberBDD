@@ -13,7 +13,7 @@ Feature: Forgot Password functionality on Magento Software Testing Board website
     Given I am on the Forgot Your Password page
     When I enter a valid email address in the email field
     And I click on the Reset Password button
-    Then I should see a confirmation message "We have sent you an email with a link to reset your password."
+    Then I should see a confirmation message "If there is an account associated with arjunyalapalli44@gmail.com you will receive an email with a link to reset your password."
 
   @forgetPassword @all @sanity
   Scenario: User submits a blank email field
