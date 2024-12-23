@@ -1,5 +1,8 @@
 package utilities;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.apache.commons.lang3.RandomStringUtils;
 
 public class CommonUtils {
@@ -34,8 +37,28 @@ public class CommonUtils {
 
 		String generatedstring = RandomStringUtils.randomAlphabetic(3);
 		String generatednumber = RandomStringUtils.randomNumeric(3);
-		return (generatedstring + "@"+ generatednumber);
+		return (generatedstring + "@" + generatednumber);
 
+	}
+
+	// Method to get Date and Time
+	public String getCurrentDateTime() {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return sdf.format(new Date());
+
+	}
+
+	// Method to generate test data
+	public static String generateTestData(String fieldName) {
+		switch (fieldName) {
+		case "username":
+			return "testUser" + System.currentTimeMillis();
+		case "password":
+			return "password" + Math.random();
+		default:
+			return "testData";
+		}
 	}
 
 }

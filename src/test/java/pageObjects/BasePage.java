@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -132,4 +133,25 @@ public class BasePage {
 		js.executeScript("window.scrollTo(0, -document.body.scrollHeight);");
 
 	}
+
+	// Switch to Frame
+	public void switchToFrame(String nameOrID) {
+
+		driver.switchTo().frame(nameOrID);
+
+	}
+
+	// Switch to window
+	public void switchToWindowByTitle(String windowTitle) {
+
+		Set<String> windowHandles = driver.getWindowHandles();
+		for (String handle : windowHandles) {
+			driver.switchTo().window(handle);
+			if (driver.getTitle().equals(windowTitle)) {
+				break;
+			}
+		}
+
+	}
+
 }
