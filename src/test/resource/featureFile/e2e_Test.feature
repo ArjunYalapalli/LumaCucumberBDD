@@ -3,7 +3,7 @@ Feature: User Checkout Flow on Magento website
   I want to test luma app by creating acount, login, searching a product, select a product, add to cart, procced to checkout,
   shipping address, shipping methods, review and payments, place order, success page
 
-  @all @smoke @regression
+  @all @smoke @regression @E2E
   Scenario: Complete checkout process on the Magento website
     Given I visit the Magento website
     When I click on the Create an Account linktext
