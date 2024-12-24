@@ -91,7 +91,7 @@ public class ForgetPassword {
 	@When("I enter a invalid email address in the email field")
 	public void i_enter_a_invalid_email_address_in_the_email_field() {
 
-		String dummy_Email = cu.randomeString();
+		String dummy_Email = cu.randomeString(6);
 		fp.enterEmailID(dummy_Email);
 
 	}

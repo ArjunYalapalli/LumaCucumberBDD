@@ -15,14 +15,16 @@ public class LoginPage extends BasePage {
 
 	public void enter_Email(String emailAddress) {
 
-		driver.findElement(email).sendKeys(emailAddress);
+		enterText(email,emailAddress);
+		
 	}
 
 	By password = By.xpath("//fieldset[@class='fieldset login']//input[@id='pass']");
 
 	public void enter_Password(String Password) {
 
-		driver.findElement(password).sendKeys(Password);
+		enterText(password,Password);
+		
 	}
 
 	By signIn_btn = By.xpath("//fieldset[@class='fieldset login']//span[contains(text(),'Sign In')]");

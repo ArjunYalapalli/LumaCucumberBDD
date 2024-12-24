@@ -37,7 +37,7 @@ public class Hooks {
 			File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
 				// Define the destination file path
-				Path destinationPath = Path.of("target/screenshots/" + scenario.getName() +cu.alphaNumaric()+ ".png");
+				Path destinationPath = Path.of("target/screenshots/" + scenario.getName() +cu.alphaNumaric(3,2)+ ".png");
 				// Create the parent directories if they don't exist
 				Files.createDirectories(destinationPath.getParent());
 				// Copy the screenshot to the destination
@@ -47,6 +47,7 @@ public class Hooks {
 			}
 		}
 
+		// Closing the driver
 		driver.quit();
 
 	}

@@ -18,9 +18,10 @@ public class Login {
 
 	
 	
+	
 	@Given("I visit the Magento website")
 	public void i_visit_the_magento_website() {
-
+		
 		System.out.println(lp.getPageTitle());
 
 	}

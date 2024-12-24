@@ -14,7 +14,7 @@ import pageObjects.CreateAccountPage;
 import pageObjects.HomePage;
 import utilities.CommonUtils;
 
-public class E2E_Test {
+public class End2End_Test {
 
 	WebDriver driver = DriverFactory.getDriver();
 	HomePage hp = new HomePage(driver);

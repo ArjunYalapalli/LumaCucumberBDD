@@ -8,9 +8,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 public class CommonUtils {
 
 	// Method to get random string
-	public String randomeString() {
+	public String randomeString(int count) {
 
-		String generatedstring = RandomStringUtils.randomAlphabetic(10);
+		String generatedstring = RandomStringUtils.randomAlphabetic(count); // a-z 24 A-Z 24
 		return generatedstring;
 
 	}
@@ -18,25 +18,26 @@ public class CommonUtils {
 	// Method to get random number
 	public String randomeNumber(int count) {
 
-		String generatednumber = RandomStringUtils.randomNumeric(count);
+		String generatednumber = RandomStringUtils.randomNumeric(count); // 0-9
 		return generatednumber;
 
 	}
 
 	// Method to get random Email ID
-	public String emailGenarator() {
+	public String emailGenarator(int scount, int icount) {
 
-		String generatedstring = RandomStringUtils.randomAlphabetic(4);
-		String generatednumber = RandomStringUtils.randomNumeric(3);
+		String generatedstring = RandomStringUtils.randomAlphabetic(scount);
+		String generatednumber = RandomStringUtils.randomNumeric(icount);
 		return (generatedstring + generatednumber + "@" + "gmail.com");
+		// dasd367@gmail.com
 
 	}
 
 	// Method to get random Alphanumaric
-	public String alphaNumaric() {
+	public String alphaNumaric(int scount, int icount) {
 
-		String generatedstring = RandomStringUtils.randomAlphabetic(3);
-		String generatednumber = RandomStringUtils.randomNumeric(3);
+		String generatedstring = RandomStringUtils.randomAlphabetic(scount);
+		String generatednumber = RandomStringUtils.randomNumeric(icount);
 		return (generatedstring + "@" + generatednumber);
 
 	}
@@ -50,7 +51,8 @@ public class CommonUtils {
 	}
 
 	// Method to generate test data
-	public static String generateTestData(String fieldName) {
+	public String generateTestData(String fieldName) {
+
 		switch (fieldName) {
 		case "username":
 			return "testUser" + System.currentTimeMillis();
@@ -59,6 +61,7 @@ public class CommonUtils {
 		default:
 			return "testData";
 		}
+
 	}
 
 }

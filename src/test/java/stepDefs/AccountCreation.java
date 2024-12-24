@@ -27,21 +27,21 @@ public class AccountCreation {
 	@When("I enter the first name {string}")
 	public void i_enter_the_first_name(String string) {
 
-		cap.enterFirstName(cu.randomeString());
+		cap.enterFirstName(cu.randomeString(5));
 
 	}
 
 	@When("I enter the last name {string}")
 	public void i_enter_the_last_name(String string) {
 
-		cap.enterLastName(cu.randomeString());
+		cap.enterLastName(cu.randomeString(5));
 
 	}
 
 	@When("I enter the email {string}")
 	public void i_enter_the_email(String string) {
 
-		String eMail = cu.emailGenarator();
+		String eMail = cu.emailGenarator(4,3);
 		cap.enterEmail(eMail);
 		System.out.println(eMail);
 

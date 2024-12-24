@@ -11,6 +11,7 @@ Feature: account creation
     And I enter the confirm password "<confirmPassword>"
     Then I click on Create an account button
     Then I should see the "Thank you for registering with Main Website Store." message
+
     Examples: 
       | firstName | lastname | email           | password  | confirmPassword |
       | name1     | Ln1      | name1@gmail.com | name1@123 | name1@123       |
