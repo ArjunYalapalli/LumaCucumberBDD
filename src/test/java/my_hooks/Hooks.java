@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 
 import driverInitilization.DriverFactory;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import utilities.CommonUtils;
@@ -32,7 +33,7 @@ public class Hooks {
 	@After
 	public void tearDown(Scenario scenario) {
 
-		if (scenario.isFailed()) {
+		//if (scenario.isFailed()) {
 			// Take a screenshot if the scenario failed
 			File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
@@ -45,7 +46,7 @@ public class Hooks {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
+		//}
 
 		// Closing the driver
 		driver.quit();
