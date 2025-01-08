@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-		features = "src/test/resource/featureFile", glue = { "stepDefs", "my_hooks" }, tags = "@login",
+		features = "src/test/resource/featureFile", glue = { "stepDefs", "my_hooks" }, tags = "@all",
 		
 		publish=true,
 		
